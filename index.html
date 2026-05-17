@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiker Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="address-display" id="url-text">Wiker Home</div>
+    <div class="top-bar">
+        <div class="logo" onclick="showHome()">Wiker</div>
+        <select id="search-engine">
+            <option value="wiki">Wikipedia</option>
+            <option value="excite">Excite</option>
+        </select>
+        <div class="input-group">
+                 <input type="text" id="omnibox" placeholder="検索ワードまたはURLを入力">
+            <button id="star-icon" class="btn-star" onclick="addBookmark()">★</button>
+        </div>
+        <button class="btn-search" onclick="navigate()">Search</button>
+    </div>
+    
+    <div class="bookmark-bar" id="bookmark-list"></div>
+    <div id="suggest-bar" class="suggest-bar"></div>
+</header>
+
+<main id="main-container">
+    <iframe id="viewport" src="" allowfullscreen style="display:none;"></iframe>
+    
+    <div id="home-screen">
+        <div class="home-logo">Wiker</div>
+        <div class="home-search-box">
+            <input type="text" id="home-input" placeholder="Wikerで検索" onkeypress="if(event.key==='Enter') homeSearch()">
+        </div>
+        <div class="home-message">
+            <p id="random-message">Wikerで、知識の世界をさらに広げよう。</p>
+            </div>
+        </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
